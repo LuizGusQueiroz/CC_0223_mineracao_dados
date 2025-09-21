@@ -82,29 +82,29 @@ def get_relatorio_numericas(df: pd.DataFrame, tol_skew: float = 0.5, tol_kurt: f
         
         relatorio += f'\n\tColuna: {column}\n'
         relatorio += f"""
-                     mínimo: {dados[column]['min']}
-                     máximo: {dados[column]['max']}
-                     média: {dados[column]['media']}
-                     moda: {dados[column]['moda']}
-                     mediana: {dados[column]['mediana']}
-                     q1: {dados[column]['q1']}
-                     q2: {dados[column]['q2']}
-                     q3: {dados[column]['q3']}
-                     amplitude: {dados[column]['amplitude']}
-                     IQR: {dados[column]['IQR']}
-                     desvio padrão: {dados[column]['desvio padrão']}
-                     variância: {dados[column]['variância']}
-                     MAD': {dados[column]['MAD']}
-                     assimetria: {dados[column]['assimetria']}
-                     curtose: {dados[column]['curtose']}
-                     assimetria de Bowlei: {dados[column]['assimetria Bowlei']}
-                     limite superior (outliers): {dados[column]['limite superior']}
-                     limite inferior (outliers): {dados[column]['limite inferior']}
-                     total de outliers: {dados[column]['total_outliers']}
-                     outliers: {dados[column]['outliers']}
-                     categoria da simetria: {dados[column]['categoria simetria']}
-                     categoria da curtose: {dados[column]['categoria curtose']}
-                     {dados[column]['estimação normalidade']}\n"""
+                mínimo: {dados[column]['min']}
+                máximo: {dados[column]['max']}
+                média: {dados[column]['media']}
+                moda: {dados[column]['moda']}
+                mediana: {dados[column]['mediana']}
+                q1: {dados[column]['q1']}
+                q2: {dados[column]['q2']}
+                q3: {dados[column]['q3']}
+                amplitude: {dados[column]['amplitude']}
+                IQR: {dados[column]['IQR']}
+                desvio padrão: {dados[column]['desvio padrão']}
+                variância: {dados[column]['variância']}
+                MAD': {dados[column]['MAD']}
+                assimetria: {dados[column]['assimetria']}
+                curtose: {dados[column]['curtose']}
+                assimetria de Bowlei: {dados[column]['assimetria Bowlei']}
+                limite superior (outliers): {dados[column]['limite superior']}
+                limite inferior (outliers): {dados[column]['limite inferior']}
+                total de outliers: {dados[column]['total_outliers']}
+                outliers: {dados[column]['outliers']}
+                categoria da simetria: {dados[column]['categoria simetria']}
+                categoria da curtose: {dados[column]['categoria curtose']}
+                {dados[column]['estimação normalidade']}\n"""
                         
     return relatorio
 
