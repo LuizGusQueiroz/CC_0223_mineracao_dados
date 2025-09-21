@@ -23,7 +23,7 @@ def get_relatorio_categoricas(df: pd.DataFrame, n: int = 5) -> str:
 		# FIltra os top n mais frequentes.
 		contagem = contagem.iloc[:n].to_dict()
 		for valor in contagem:
-			relatorio += f'{valor} | {contagem[valor]}\n'
+			relatorio += f'{valor:8} | {contagem[valor]:11}\n'
 		relatorio += '\n'
 	
 	# Calcula o índice de diversidade, que será a frequência do valor mais frequente dividido pela quantidade de valores totais.
@@ -33,7 +33,7 @@ def get_relatorio_categoricas(df: pd.DataFrame, n: int = 5) -> str:
 	for column in df.columns:
 		# Cálculo da contagem do valor mais frequente.
 		k: int = df[column].value_counts().max()
-		relatorio += f'{column} | {round(k/n_registros, 2)}'
+		relatorio += f'{column} | {round(k/n_registros, 2)}\n'
 	
 
 	return relatorio
