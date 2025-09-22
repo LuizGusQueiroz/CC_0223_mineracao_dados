@@ -1,9 +1,9 @@
-from typing import Dict, List
+from typing import Dict, List, Tuple
 import pandas as pd
 import numpy as np
 
 
-def get_relatorio_numericas(df: pd.DataFrame, tol_skew: float = 0.5, tol_kurt: float = 1) -> str:
+def get_relatorio_numericas(df: pd.DataFrame, tol_skew: float = 0.5, tol_kurt: float = 1) -> Tuple[str, Dict]:
     """
     Faz o relatório do DataFrame, assumindo que todas as colunas são numéricas.
 	
@@ -13,7 +13,8 @@ def get_relatorio_numericas(df: pd.DataFrame, tol_skew: float = 0.5, tol_kurt: f
     tol_kurt (float): Tolerância para cálculo da curtose.
 
     Retorna:
-	(str): O relatório gerado.
+	(str): O relatório gerado em formato de string.
+    (Dict): O relatório em formato de dicionário.
 	"""
     
     relatorio: str = '\n\nCOLUNAS NUMÉRICAS\n\n'
@@ -106,5 +107,5 @@ def get_relatorio_numericas(df: pd.DataFrame, tol_skew: float = 0.5, tol_kurt: f
                 categoria da curtose: {dados[column]['categoria curtose']}
                 {dados[column]['estimação normalidade']}\n"""
                         
-    return relatorio
+    return relatorio, dados
 
